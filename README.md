@@ -1,5 +1,5 @@
 # Test-automation-portfolio
-Portfolio of my Test automation projects in, Java, and Appium
+Portfolio of my Test automation projects in, Java, TestNG and Appium
 This project has a basic test to open Instagram website on an Android device using Appium and Chrome browser.
 
 # What it does
