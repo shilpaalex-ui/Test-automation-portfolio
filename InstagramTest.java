@@ -32,13 +32,12 @@ public class InstagramTest  {
   @BeforeTest
   public void launchingcommands() throws MalformedURLException {
 	  driver = getDriver();
-	  System.out.println("Server connected");
-	  driver.get("https://www.instagram.com/");
+	  System.out.println("Server connected")
 	  }
  
   @AfterTest
   public void closeapp() throws InterruptedException {
-	  // close the app
+	  // To close the app
 	  Thread.sleep(5000);
 	  driver.close();
 
@@ -51,7 +50,8 @@ public class InstagramTest  {
 	  capabilities.setCapability("platformName", "Android");
 	  capabilities.setCapability("platformVersion", "11");
 	  capabilities.setCapability("automationName", "UiAutomator2"); 
-      System.out.println("Listening to Appium server...");
+      capabilities.setCapability("appPackage", "com.instagram.android");
+	  capabilities.setCapability("appActivity", "com.instagram.android.activity.MainTabActivity");
       return new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities); 
 }
 }
