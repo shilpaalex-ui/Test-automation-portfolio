@@ -19,7 +19,7 @@ public class InstagramTest  {
 	public void openInstagramTest() throws InterruptedException {
 		Thread.sleep(5000);
 		try {
-			WebElement element = driver.findElementById("");
+			WebElement element = driver.findElementById("dummy_id");
 	            if (element.isDisplayed()) {
 	                System.out.println("Instagram opened successfully!");
 	            }
