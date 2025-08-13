@@ -10,5 +10,5 @@ This project has a basic test to open Instagram app.
 
 # Notes
 
-- The test uses a simple XPath (`//body`) because the phone was not connected during development.
+- id used as "dummy_id" becouse the device was not connected during the development.
 
