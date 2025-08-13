@@ -35,8 +35,6 @@ public class InstagramTest  {
  
   @AfterTest
   public void closing_commands() throws InterruptedException {
-	  // to close the app
-	  Thread.sleep(5000);
 	  driver.quit();
 
 }
