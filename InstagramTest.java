@@ -2,7 +2,6 @@ package instagramAutomation;
 
 import org.testng.annotations.Test;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 import org.testng.annotations.BeforeTest;
@@ -11,7 +10,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 
@@ -21,7 +19,7 @@ public class InstagramTest  {
 	public void openInstagramTest() throws InterruptedException {
 		Thread.sleep(5000);
 		try {
-			WebElement element = driver.findElementByXPath("//body");
+			WebElement element = driver.findElementById("");
 	            if (element.isDisplayed()) {
 	                System.out.println("Instagram opened successfully!");
 	            }
@@ -32,25 +30,23 @@ public class InstagramTest  {
   @BeforeTest
   public void launchingcommands() throws MalformedURLException {
 	  driver = getDriver();
-	  System.out.println("Server connected")
+	  System.out.println("Server connected");
 	  }
  
   @AfterTest
-  public void closeapp() throws InterruptedException {
-	  // To close the app
+  public void closing_commands() throws InterruptedException {
+	  // to close the app
 	  Thread.sleep(5000);
-	  driver.close();
+	  driver.quit();
 
 }
   private AndroidDriver getDriver() throws MalformedURLException {
 	  DesiredCapabilities capabilities = new DesiredCapabilities();
-	  capabilities.setCapability("chromedriverExecutable", System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
-	  capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
 	  capabilities.setCapability("deviceName", "realme Narzo 20");
 	  capabilities.setCapability("platformName", "Android");
 	  capabilities.setCapability("platformVersion", "11");
 	  capabilities.setCapability("automationName", "UiAutomator2"); 
-      capabilities.setCapability("appPackage", "com.instagram.android");
+	  capabilities.setCapability("appPackage", "com.instagram.android");
 	  capabilities.setCapability("appActivity", "com.instagram.android.activity.MainTabActivity");
       return new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities); 
 }
